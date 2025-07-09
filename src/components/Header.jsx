@@ -45,12 +45,12 @@ const Header = () => {
           {/* Desktop Navigation Menu */}
           <nav className="nav-menu">
             <ul>
-              <li><a href="#" onClick={closeMenu}>HOME</a></li>
-              <li><a href="#" onClick={closeMenu}>ABOUT</a></li>
-              <li><a href="#" onClick={closeMenu}>SERVICES</a></li>
-              <li><a href="#" onClick={closeMenu}>TEAM</a></li>
-              <li><a href="#" onClick={closeMenu}>GALLERY</a></li>
-              <li><a href="#" onClick={closeMenu}>CONTACT US</a></li>
+              <li><a href="#home" onClick={closeMenu}>HOME</a></li>
+              <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
+              <li><a href="#services" onClick={closeMenu}>SERVICES</a></li>
+              <li><a href="#team" onClick={closeMenu}>TEAM</a></li>
+              <li><a href="#category" onClick={closeMenu}>CATEGORY</a></li>
+              <li><a href="#contact" onClick={closeMenu}>CONTACT US</a></li>
             </ul>
           </nav>
         </div>
@@ -58,12 +58,12 @@ const Header = () => {
         {/* Mobile Menu Overlay */}
         <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="#" onClick={closeMenu}>HOME</a></li>
-            <li><a href="#" onClick={closeMenu}>ABOUT</a></li>
-            <li><a href="#" onClick={closeMenu}>SERVICES</a></li>
-            <li><a href="#" onClick={closeMenu}>TEAM</a></li>
-            <li><a href="#" onClick={closeMenu}>GALLERY</a></li>
-            <li><a href="#" onClick={closeMenu}>CONTACT US</a></li>
+            <li><a href="#home" onClick={closeMenu}>HOME</a></li>
+            <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
+            <li><a href="#services" onClick={closeMenu}>SERVICES</a></li>
+            <li><a href="#team" onClick={closeMenu}>TEAM</a></li>
+            <li><a href="#category" onClick={closeMenu}>CATEGORY</a></li>
+            <li><a href="#contact" onClick={closeMenu}>CONTACT US</a></li>
           </ul>
         </div>
       </header>

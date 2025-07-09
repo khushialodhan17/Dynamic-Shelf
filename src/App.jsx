@@ -5,17 +5,19 @@ import GallaryPage from './components/GallaryPage.jsx'
 import Footer from './components/Footer.jsx'
 import About from './components/About.jsx'
 import OurServices from './components/OurServices.jsx'
+import OurTeam from './components/ourTeam.jsx'
 
 const App = () => {
   return (
     <>
+    <Header />
       <style>{AppCSS}</style>
-      <Header />
-      <HeroSection />
-      <About/>
-      <OurServices/>
-      <GallaryPage/>
-      <Footer />
+      <div id="home"><HeroSection /></div>
+      <div id="about"><About /></div>
+      <div id="services"><OurServices /></div>
+      <div id="team"><OurTeam /></div>
+      <div id="category"><GallaryPage /></div>
+      <div id="contact"><Footer /></div>
     </>
   )
 }

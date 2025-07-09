@@ -1,88 +1,113 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const GallaryPage = () => {
- const [activeFilter, setActiveFilter] = useState('All');
-  // State to hold product data, initially empty
+  const [activeFilter, setActiveFilter] = useState('All');
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
-  // Dummy product data (this would come from your backend/ML model)
-  const dummyProductData = [
-    // Dairy Products
-    { id: 1, category: 'Dairy', src: "https://placehold.co/400x200/ADD8E6/000000?text=Milk", caption: "Fresh Milk", price: "$3.49", status: "New" },
-    { id: 2, category: 'Dairy', src: "https://placehold.co/400x200/ADD8E6/000000?text=Cheese", caption: "Cheddar Cheese", price: "$7.99", status: "Discounted" },
-    { id: 3, category: 'Dairy', src: "https://placehold.co/400x200/ADD8E6/000000?text=Yogurt", caption: "Creamy Yogurt", price: "$2.29", status: "" },
-    { id: 4, category: 'Dairy', src: "https://placehold.co/400x200/ADD8E6/000000?text=Butter", caption: "Farm Butter", price: "$4.99", status: "Will be discounted in 2 days" },
-
-    // Grocery Products
-    { id: 5, category: 'Grocery', src: "https://placehold.co/400x200/F0E68C/333333?text=Rice", caption: "Basmati Rice", price: "$12.50", status: "New" },
-    { id: 6, category: 'Grocery', src: "https://placehold.co/400x200/F0E68C/333333?text=Pasta", caption: "Durum Wheat Pasta", price: "$2.99", status: "" },
-    { id: 7, category: 'Grocery', src: "https://placehold.co/400x200/F0E68C/333333?text=Coffee", caption: "Premium Coffee Beans", price: "$9.99", status: "Discounted" },
-    { id: 8, category: 'Grocery', src: "https://placehold.co/400x200/F0E68C/333333?text=Cereal", caption: "Breakfast Cereal", price: "$4.75", status: "New" },
-
-    // Vegetables & Fruits Products
-    { id: 9, category: 'Vegetables & Fruits', src: "https://placehold.co/400x200/8BC34A/388E3C?text=Apples", caption: "Crisp Red Apples", price: "$1.99/lb", status: "Will be discounted in 2 days" },
-    { id: 10, category: 'Vegetables & Fruits', src: "https://placehold.co/400x200/8BC34A/388E3C?text=Broccoli", caption: "Fresh Broccoli", price: "$2.50", status: "" },
-    { id: 11, category: 'Vegetables & Fruits', src: "https://placehold.co/400x200/8BC34A/388E3C?text=Oranges", caption: "Juicy Oranges", price: "$0.79/ea", status: "New" },
-    { id: 12, category: 'Vegetables & Fruits', src: "https://placehold.co/400x200/8BC34A/388E3C?text=Spinach", caption: "Organic Spinach", price: "$3.00", status: "Discounted" },
-
-    // Bakery Products
-    { id: 13, category: 'Bakery', src: "https://placehold.co/400x200/D2B48C/333333?text=Bread", caption: "Artisan Bread", price: "$4.25", status: "New" },
-    { id: 14, category: 'Bakery', src: "https://placehold.co/400x200/D2B48C/333333?text=Croissant", caption: "Flaky Croissant", price: "$1.50", status: "" },
-    { id: 15, category: 'Bakery', src: "https://placehold.co/400x200/D2B48C/333333?text=Cake", caption: "Chocolate Cake", price: "$18.00", status: "Will be discounted in 2 days" },
-    { id: 16, category: 'Bakery', src: "https://placehold.co/400x200/D2B48C/333333?text=Cookies", caption: "Assorted Cookies", price: "$5.99", status: "Discounted" },
+  const categoryOrder = [
+    'Grains & Pulses',
+  'Beverages',
+  'Fruits & Vegetables',
+  'Oils & Fats',
+  'Bakery',
+  'Dairy',
+  'Seafood',
   ];
 
-  // This useEffect simulates fetching data from a backend
-  useEffect(() => {
-    // In a real application, you would make a fetch call here:
-    // fetch('/api/products')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     setProducts(data);
-    //     setLoading(false);
-    //   })
-    //   .catch(error => {
-    //     console.error("Error fetching products:", error);
-    //     setLoading(false);
-    //   });
+  // Fetch products from Flask backend
+  const fetchProducts = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:5000/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: activeFilter === 'All' ? '' : activeFilter }),
+      });
 
-    // For now, we simulate a delay and then set the dummy data
-    const timer = setTimeout(() => {
-      setProducts(dummyProductData);
-      setLoading(false);
-    }, 500); // Simulate network delay
+      const data = await response.json();
 
-    return () => clearTimeout(timer); // Cleanup timer
-  }, []); // Empty dependency array means this runs once on mount
+      if (response.ok) {
 
-  // Dummy function to simulate an ML model updating prices/statuses
-  // In a real scenario, your backend would push updates, or you'd re-fetch data.
-  const simulatePriceUpdate = () => {
-    setProducts(prevProducts =>
-      prevProducts.map(product => {
-        if (product.id === 1) { // Example: Update Milk
-          return { ...product, price: "$2.99", status: "Discounted" };
-        }
-        if (product.id === 14) { // Example: Update Croissant
-          return { ...product, price: "$1.00", status: "Discounted" };
-        }
-        if (product.id === 11) { // Example: Oranges become 'Will be discounted'
-            return { ...product, status: "Will be discounted in 2 days" };
-        }
-        if (product.id === 5) { // Example: Rice becomes normal after 'New'
-            return { ...product, status: "" };
-        }
-        return product;
-      })
-    );
-    console.log("Simulating price/status update for some products.");
+      const updated = await Promise.all(
+       data.results.map(async (item, idx) => ({
+        id: idx + 1,
+        category: item.catagory,
+        caption: item.product_name,
+        price: `$${item.predicted_price.toFixed(2)}`,
+        status: simulateStatus(item),
+        src: await generateImage(item.product_name, item.catagory),
+  }))
+);
+        setProducts(updated);
+      } else {
+        setProducts([]);
+      }
+    } catch (error) {
+      console.error("Error fetching data from backend:", error);
+      setProducts([]);
+    }
+    setLoading(false);
   };
 
-  // Filter products based on activeFilter state
-  const filteredProducts = activeFilter === 'All'
-    ? products
-    : products.filter(product => product.category === activeFilter);
+const generateImage = async (productName, category) => {
+  try {
+    const response = await fetch(
+      `https://${import.meta.env.VITE_RAPID_API_HOST}/images/search?q=${encodeURIComponent(productName)}&count=1`,
+      {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
+          'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST
+        }
+      }
+    );
+
+    const data = await response.json();
+    const imageUrl = data?.value?.[0]?.contentUrl;
+
+    if (imageUrl) {
+      console.log(`✅ Image found for ${productName}`);
+      return imageUrl;
+    }
+  } catch (err) {
+    console.warn(`Image API failed for ${productName}:`, err.message);
+  }
+
+  // Fallback if API fails
+  const fallbackColorMap = {
+    'Dairy': 'ADD8E6',
+    'Bakery': 'D2B48C',
+    'Fruits & Vegetables': '8BC34A',
+    'Grains & Pulses': 'DEB887',
+    'Beverages': '87CEFA',
+    'Oils & Fats': 'FFD700',
+    'Seafood': '4682B4'
+  };
+
+  const color = fallbackColorMap[category] || 'cccccc';
+  console.log(`🟡 Using fallback image for ${productName}`);
+  return `https://placehold.co/400x200/${color}/333333?text=${encodeURIComponent(productName)}`;
+};
+
+
+  // Simulate status (in real case, status can come from backend too)
+  const simulateStatus = (item) => {
+    const p = parseFloat(item.predicted_price);
+    const o = parseFloat(item.unit_price);
+    const diff = o - p;
+    if (diff > 5) return "Discounted";
+    if (diff > 0) return "Will be discounted in 2 days";
+    return "New";
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [activeFilter]);
+
+  const filteredProducts = products; // Already filtered via backend
 
   if (loading) {
     return (
@@ -105,38 +130,15 @@ const GallaryPage = () => {
           >
             All Products
           </button>
-          <button
-            className={`filter-button ${activeFilter === 'Dairy' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('Dairy')}
-          >
-            Dairy
-          </button>
-          <button
-            className={`filter-button ${activeFilter === 'Grocery' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('Grocery')}
-          >
-            Grocery
-          </button>
-          <button
-            className={`filter-button ${activeFilter === 'Vegetables & Fruits' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('Vegetables & Fruits')}
-          >
-            Vegetables & Fruits
-          </button>
-          <button
-            className={`filter-button ${activeFilter === 'Bakery' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('Bakery')}
-          >
-            Bakery
-          </button>
-          {/* Dummy button to trigger a simulated price update */}
-          <button
-            className="filter-button"
-            onClick={simulatePriceUpdate}
-            style={{ backgroundColor: '#FFB300', color: '#333' }}
-          >
-            Simulate ML Update
-          </button>
+          {categoryOrder.map(cat => (
+            <button
+              key={cat}
+              className={`filter-button ${activeFilter === cat ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat)}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         <div className="gallery-grid">
@@ -148,7 +150,6 @@ const GallaryPage = () => {
                   alt={product.caption}
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x200/cccccc/333333?text=Image+Not+Found"; }}
                 />
-                {/* Dynamic Status Button */}
                 {product.status && (
                   <button
                     className={`status-button ${
@@ -173,10 +174,11 @@ const GallaryPage = () => {
       </div>
     </>
   );
-}
+};
 
-export default GallaryPage
+export default GallaryPage;
 
+// Keep your existing GalleryPageCSS here
 const GalleryPageCSS = `
   .gallery-page {
     padding: 40px 20px;
