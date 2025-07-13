@@ -1,0 +1,98 @@
+.hero-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -85px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-heading {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 400;
+  padding-top: 40px;
+  color: yellow;
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.8),
+    3px 3px 8px rgba(255, 215, 0, 0.5); 
+  font-family: 'Great Vibes', cursive;
+  transform: perspective(600px) rotateX(5deg);
+  animation: fadeSlideIn 1.5s ease-out forwards;
+  opacity: 0;
+  transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+
+.hero-heading:hover {
+  transform: perspective(600px) rotateX(0deg) scale(1.03);
+  text-shadow:
+    1px 1px 3px rgba(0, 0, 0, 0.8),
+    4px 4px 12px rgba(255, 255, 100, 0.6);
+  cursor: default;
+}
+
+.carousel-wrapper.below-hero {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background-color: #f8f8f8;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform;
+}
+
+.carousel-img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 12px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-15%, 0, 0);
+  }
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(5deg);
+  }
+}

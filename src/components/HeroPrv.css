@@ -1,0 +1,97 @@
+ .hero-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -85px; 
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+} 
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  color: yellow;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+  padding-top: 35px;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  padding: 10px 0;
+  z-index: 2;
+}
+
+.top-carousel {
+  bottom: 180px;
+}
+
+.bottom-carousel {
+  bottom: 30px;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform;
+}
+
+.bottom-carousel .carousel-track {
+  animation: scroll-right 30s linear infinite;
+  will-change: transform;
+}
+
+.carousel-img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 12px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-15%, 0, 0);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translate3d(-15%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

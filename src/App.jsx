@@ -1,26 +1,32 @@
-import React from 'react'
-import Header from './components/Header.jsx'
-import HeroSection from './components/HeroSection.jsx'
-import GallaryPage from './components/GallaryPage.jsx'
-import Footer from './components/Footer.jsx'
-import About from './components/About.jsx'
-import OurServices from './components/OurServices.jsx'
-import OurTeam from './components/ourTeam.jsx'
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import HeroSection from './components/HeroSection.jsx';
+import Footer from './components/Footer.jsx';
+import About from './components/About.jsx';
+import OurServices from './components/OurServices.jsx';
+import OurTeam from './components/OurTeam.jsx';
+import SearchResults from './components/SearchResults.jsx'; 
 
 const App = () => {
   return (
     <>
-    <Header />
-      <style>{AppCSS}</style>
-      <div id="home"><HeroSection /></div>
-      <div id="about"><About /></div>
-      <div id="services"><OurServices /></div>
-      <div id="team"><OurTeam /></div>
-      <div id="category"><GallaryPage /></div>
-      <div id="contact"><Footer /></div>
+      <Header />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <div id="home"><HeroSection /></div>
+            <div id="about"><About /></div>
+            <div id="services"><OurServices /></div>
+            <div id="team"><OurTeam /></div>
+            <div id="contact"><Footer /></div>
+          </>
+        } />
+        <Route path="/results" element={<SearchResults />} />
+      </Routes>
     </>
-  )
-}
+  );
+};
+
 
 const AppCSS = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');

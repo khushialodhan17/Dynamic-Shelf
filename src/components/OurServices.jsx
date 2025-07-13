@@ -1,55 +1,3 @@
-// import React from 'react';
-// import './OurServices.css';
-// import fruitsImg from '../assets/vegan.png';
-// import vegetableImg from '../assets/natural.png';
-// import meatImg from '../assets/ecofriendly.png';
-// import dairyImg from '../assets/natIngredients.png';
-
-// const services = [
-//   {
-//     title: "Fresh Fruits",
-//     image: fruitsImg,
-//     fact: "Fruits are highly perishable and must be stored at low temperatures to retain freshness.",
-//   },
-//   {
-//     title: "Green Vegetables",
-//     image: vegetableImg,
-//     fact: "Leafy greens lose nutrients quickly; eco-packaging slows this process.",
-//   },
-//   {
-//     title: "Dairy Products",
-//     image: dairyImg,
-//     fact: "Dairy must be refrigerated under 4°C to prevent spoilage and bacterial growth.",
-//   },
-//   {
-//     title: "Organic Meat",
-//     image: meatImg,
-//     fact: "Vacuum-sealed eco-packaging can extend the shelf life of organic meats.",
-//   },
-// ];
-
-// const OurServices = () => {
-//   return (
-//     <div className="services-container">
-//       <h2>Our Services</h2>
-//       <div className="card-grid">
-//         {services.map((service, index) => (
-//           <div className="card" key={index}>
-//             <img src={service.image} alt={service.title} />
-//             <h3>{service.title}</h3>
-//             <p>{service.fact}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default OurServices;
-
-
-
-import React from 'react';
 import './OurServices.css';
 import fruitsImg from '../assets/vegan.png';
 import vegetableImg from '../assets/natural.png';
@@ -58,41 +6,46 @@ import dairyImg from '../assets/natIngredients.png';
 
 const services = [
   {
-    title: "Reduce Food Waste",
+    title: "ML-Based Discount Pricing",
     image: fruitsImg,
-    fact: "Our system intelligently lowers prices as expiry approaches, helping retailers sell products before they go to waste.",
+    fact: "Applies machine learning to suggest discounted prices depending on how close the product is to expiry. Tech Stack: Python (XGBoost ML model), Pandas (feature engineering), Flask (API), MongoDB (product data storage).",
   },
   {
-    title: "Boost Revenue",
+    title: "Product Search by Name",
     image: vegetableImg,
-    fact: "Dynamic discounts optimize sell-through rates while maintaining profitability — no steep markdowns unless necessary.",
+    fact: "Allows users to search for products by name and instantly view matching items along with pricing details. Tech Stack: React (search UI), JavaScript (search logic), Flask (search endpoint), MongoDB (text-based product search).",
   },
   {
-    title: "Clear Near-Expiry Stock",
+    title: "Result Page Navigation",
     image: dairyImg,
-    fact: "Real-time expiry tracking triggers smart price drops, helping you move aging stock quickly and efficiently.",
+    fact: "When a user submits a search, the system fetches matching product data from the backend in real time and displays it on a dedicated results page. Tech Stack: React Router (page navigation), Axios (API calls), Flask (backend API), MongoDB (search result data fetch).",
   },
   {
-    title: "No More Guesswork",
+    title: "Live Product Cards",
     image: meatImg,
-    fact: "Say goodbye to manual pricing decisions. Our dashboard automates and visualizes everything — from stock levels to expiry trends.",
+    fact: "Each product card shows the image, name, expiry date, original price, and dynamically predicted discount price. Tech Stack: React (UI rendering), JavaScript (dynamic props), Flask (API response delivery), MongoDB (product info storage).",
   },
 ];
 
 const OurServices = () => {
   return (
     <div className="services-container">
-      <h2>Our Services</h2>
+      <h2>Explore What Makes Us Smarter</h2>
       <p className="subtitle">
         Smarter Pricing. Less Waste. More Profit.
       </p>
       <div className="card-grid">
         {services.map((service, index) => (
           <div className="card" key={index}>
-            <img src={service.image} alt={service.title} />
-            <h3>{service.title}</h3>
-            <p>{service.fact}</p>
+          <img src={service.image} alt={service.title} />
+          <h3>{service.title}</h3>
+          <p className="description">
+            {service.fact.split("Tech Stack:")[0]}
+          </p>
+          <div className="tech-stack-box">
+             <strong>🛠 Tech Stack:</strong> {service.fact.split("Tech Stack:")[1]}
           </div>
+      </div>
         ))}
       </div>
     </div>

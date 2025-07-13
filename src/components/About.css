@@ -1,5 +1,4 @@
-
- .about-section {
+.about-section {
   padding: 60px 20px;
   background: #fffefc;
 }
@@ -7,7 +6,7 @@
 .about-wrapper {
   max-width: 1200px;
   margin: auto;
-  background: white;
+  background: linear-gradient(to right, #ffffff 0%, #fff9e0 40%, #fff3b0 100%);
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -23,10 +22,13 @@
 }
 
 .about-text h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 2px #ddd;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #f57f17;
+  font-weight: 800;
+  font-family: 'Georgia', sans-serif;
+  text-shadow: 2px 2px 8px rgba(255, 193, 7, 0.7);
+  letter-spacing: 1px;
 }
 
 .about-text h3 {
@@ -41,24 +43,6 @@
   color: #555;
   line-height: 1.6;
   margin: 10px 0;
-}
-
-.read-more {
-  margin-top: 20px;
-  padding: 14px 28px;
-  background-color: #ffc107;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.read-more:hover {
-  background-color: #ffb300;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 179, 0, 0.5);
 }
 
 .carousel-container {
@@ -80,13 +64,13 @@
 }
 
 .slick-dots li button:before {
-  font-size: 18px !important;         /* Make dot bigger */
-  color: #28a745 !important;          /* Fresh green */
+  font-size: 18px !important;         
+  color: #28a745 !important; 
   opacity: 0.8;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #218838 !important;          /* Darker active color */
+  color: #218838 !important;          
   opacity: 1;
-  transform: scale(1.2);              /* Slight zoom */
+  transform: scale(1.2);
 }
