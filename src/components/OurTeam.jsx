@@ -1,6 +1,6 @@
 import './OurTeam.css';
 import khushiImg from '../assets/khushi_Img.jpg';
-import ananyaImg from '../assets/ananya_Img.jpg';
+import ananyaImg from '../assets/ananya_img.jpg';
 import ashiyaImg from '../assets/ashiya_Img.jpg';
 import diyaImg from '../assets/diya_Img.jpg';
 
