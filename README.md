@@ -62,23 +62,27 @@ Perishable grocery items often go to waste simply because their prices don’t a
 - Helps **consumers** access more transparent and fair pricing.
 - Builds trust in **delivery platforms** like Blinkit and Zomato by promoting expiry-aware shopping.
 
-## Folder Structure:
-├── frontend/ # React components, routing, and UI assets
-│ ├── components/
-│ ├── pages/
-│ ├── assets/
-│ └── ...
-├── backend/ # Flask APIs, trained model, preprocessing scripts
-│ ├── app.py
-│ ├── model/
-│ ├── utils/
-│ └── ...
-├── dataset/ # Raw and cleaned datasets
-│ ├── raw/
-│ └── cleaned/
-├── model/ # Trained XGBoost model (.pkl or .joblib)
-│ └── xgboost_model.pkl
-└── README.md
+## Folder Structure
+
+- `frontend/` – React components, routing, UI assets  
+  - `components/`  
+  - `pages/`  
+  - `assets/`  
+
+- `backend/` – Flask APIs, model, preprocessing scripts  
+  - `app.py`  
+  - `model/`  
+  - `utils/`  
+
+- `dataset/` – Raw and cleaned datasets  
+  - `raw/`  
+  - `cleaned/`  
+
+- `model/` – Trained XGBoost model files  
+  - `xgboost_model.pkl`  
+
+- `README.md`
+
 
 
 ## To Run:
