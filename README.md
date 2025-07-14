@@ -85,7 +85,11 @@ Perishable grocery items often go to waste simply because their prices don’t a
 ## To Run:
 - Deployed frontend on : **Vercel**
 - Deployed backend on : **Render**
-- Link : 
+- Link : **https://flexshelf.vercel.app/**
+
+## GitHub Repositories:
+- Frontend: https://github.com/khushialodhan17/FlexShelf 
+- Backend: https://github.com/khushialodhan17/FlexShelf-Backend
 
 
 ## Future Enhancements:
