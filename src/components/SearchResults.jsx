@@ -24,7 +24,9 @@ const SearchResults = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/search-products', {
+        const response = await fetch(
+          'https://flexshelf-backend.onrender.com/search-products'
+          , {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query })

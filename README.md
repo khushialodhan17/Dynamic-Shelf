@@ -4,7 +4,7 @@
 Dynamic Pricing of Perishable Goods
 
 ## Overview:
-Perishable grocery items often go to waste simply because their prices don’t adapt as their expiry dates approach. This project introduces a machine learning-based web platform that applies *dynamic pricing* to such items based on key parameters like expiry date, stock quantity, inventory turnover rate and category. It helps reduce waste, increase sales, and create transparency between retailers and consumers.
+Perishable grocery items often go to waste simply because their prices don’t adapt as their expiry dates approach. This project introduces a machine learning-based web platform that applies **dynamic pricing** to such items based on key parameters like expiry date, stock quantity, inventory turnover rate and category. It helps reduce waste, increase sales, and create transparency between retailers and consumers.
 
 ## Key Features:
 - Predicts discounted prices for near-expiry products using a trained XGBoost model.
@@ -81,8 +81,6 @@ Perishable grocery items often go to waste simply because their prices don’t a
   - `xgboost_discount_model.pkl`
 
 - `README.md`
-
-
 
 ## To Run:
 - Deployed frontend on : **Vercel**
