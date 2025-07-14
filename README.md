@@ -63,7 +63,6 @@ Perishable grocery items often go to waste simply because their prices don’t a
 - Builds trust in **delivery platforms** like Blinkit and Zomato by promoting expiry-aware shopping.
 
 ## Folder Structure:
-project-root/
 ├── frontend/ # React components, routing, and UI assets
 │ ├── components/
 │ ├── pages/
