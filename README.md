@@ -105,4 +105,4 @@ Perishable grocery items often go to waste simply because their prices don’t a
 - Ananya Goyal
 
 Developed during **Walmart Sparkathon-2025** 
-**Theme**- Reimagining customer experience with emerging technologies
+- **Theme**- Reimagining customer experience with emerging technologies
