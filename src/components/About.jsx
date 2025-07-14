@@ -37,7 +37,7 @@ const About = () => {
             Our Smart Dynamic Pricing System uses machine learning to recommend the perfect 
             discount for perishable items — based on how close they are to expiry, how fast 
             they’re selling, and how much stock is left.
-            Powered by a real-time POS interface, this solution adjusts prices dynamically, 
+            Powered by a real-time interface, this solution adjusts prices dynamically, 
             helping retailers:
             <ul>
               <li>Reduce food waste</li>
