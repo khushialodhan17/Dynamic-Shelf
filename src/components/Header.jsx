@@ -113,7 +113,7 @@ const Header = () => {
             <li><a href="#services" onClick={(e) => handleNavClick(e, "services")}>SERVICES</a></li>
             <li><a href="#team" onClick={(e) => handleNavClick(e, "team")}>TEAM</a></li>
             <li><a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>CONTACT US</a></li>
-            <li><a href="https://github.com/khushialodhan17/FlexShelf" className="repo-btn" target="_blank" rel="noopener noreferrer">FRONTED-REPO</a></li>
+            <li><a href="https://github.com/khushialodhan17/FlexShelf" className="repo-btn" target="_blank" rel="noopener noreferrer">FRONTEND-REPO</a></li>
             <li><a href="https://github.com/khushialodhan17/FlexShelf-Backend"  className="repo-btn" target="_blank" rel="noopener noreferrer">BACKEND-REPO</a></li>
 
           </ul>

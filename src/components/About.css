@@ -74,3 +74,48 @@
   opacity: 1;
   transform: scale(1.2);
 }
+
+/* ————— STEP‑DOWN TUNING ————— */
+
+/* 1️⃣  Desktops ≤ 1200 px  */
+@media (max-width: 1200px) {
+  .about-wrapper {
+    padding: 30px;
+    gap: 30px;
+  }
+}
+
+/* 2️⃣  Tablets & small laptops ≤ 992 px  */
+@media (max-width: 992px) {
+  .about-text h2   { font-size: 2.5rem; }
+  .about-text      { flex: 1 1 100%; text-align: center; }
+
+  .carousel-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* 3️⃣  Big phones / portrait tablets ≤ 768 px  */
+@media (max-width: 768px) {
+  .about-wrapper   { flex-direction: column; gap: 25px; }
+  .about-section   { padding: 40px 15px; }
+
+  .about-text h2   { font-size: 2rem;  }
+  .about-text h3   { font-size: 18px; }
+  .about-text p    { font-size: 15px; }
+
+  .carousel-slide img { height: 220px; }
+}
+
+/* 4️⃣  Small phones ≤ 480 px  */
+@media (max-width: 480px) {
+  .about-text h2   { font-size: 1.8rem; }
+  .about-text h3   { font-size: 16px; }
+  .about-text p    { font-size: 14px; line-height: 1.5; }
+
+  .carousel-slide img { height: 190px; }
+
+  /* Slick dot tweaks so they’re not huge on tiny screens */
+  .slick-dots li button:before { font-size: 14px !important; }
+}
