@@ -81,6 +81,27 @@ const Header = () => {
               <li><a href="#team" onClick={(e) => handleNavClick(e, "team")}>TEAM</a></li>
               <li><a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>CONTACT US</a></li>
 
+              <li>
+                <a
+                  href="https://github.com/khushialodhan17/FlexShelf"
+                  className="repo-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  FRONTEND-REPO
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://github.com/khushialodhan17/FlexShelf-Backend"
+                  className="repo-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  BACKEND-REPO
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -92,6 +113,8 @@ const Header = () => {
             <li><a href="#services" onClick={(e) => handleNavClick(e, "services")}>SERVICES</a></li>
             <li><a href="#team" onClick={(e) => handleNavClick(e, "team")}>TEAM</a></li>
             <li><a href="#contact" onClick={(e) => handleNavClick(e, "contact")}>CONTACT US</a></li>
+            <li><a href="https://github.com/khushialodhan17/FlexShelf" className="repo-btn" target="_blank" rel="noopener noreferrer">FRONTED-REPO</a></li>
+            <li><a href="https://github.com/khushialodhan17/FlexShelf-Backend"  className="repo-btn" target="_blank" rel="noopener noreferrer">BACKEND-REPO</a></li>
 
           </ul>
         </div>
@@ -101,6 +124,23 @@ const Header = () => {
 };
 
 const HeaderCSS = `
+
+.repo-btn {
+  color: #FFD700;
+  font-weight: 600;
+  text-decoration: none;
+  // border: 1px solid #FFD700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.repo-btn:hover {
+  // background: #FFD700;
+  color: #1a1c24;
+}
+
+
 .header {
   background-color: transparent;
   color: white;
