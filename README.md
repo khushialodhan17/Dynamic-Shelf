@@ -1,6 +1,6 @@
 README FILE CONTENT
 
-*Project Title: Dynamic Pricing of Perishable Goods*
+# Project Title: Dynamic Pricing of Perishable Goods*
 
 *Overview:*
 
