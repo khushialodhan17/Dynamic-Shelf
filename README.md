@@ -64,22 +64,21 @@ Perishable grocery items often go to waste simply because their prices don’t a
 
 ## Folder Structure
 
-- `frontend/` – React components, routing, UI assets  
-  - `components/`  
-  - `pages/`  
+- `user/` – React components, routing, UI assets  
+  - `components/`    
   - `assets/`  
 
 - `backend/` – Flask APIs, model, preprocessing scripts  
-  - `app.py`  
-  - `model/`  
-  - `utils/`  
+  - `backend.py`  
+  - `price_predicted.py`   
 
 - `dataset/` – Raw and cleaned datasets  
-  - `raw/`  
-  - `cleaned/`  
+  - `Updated_Grocery_Inventory_with_Images_Dates_seven.csv`  
+  - `final_output_with_predictions.csv`  
 
 - `model/` – Trained XGBoost model files  
-  - `xgboost_model.pkl`  
+  - `feature_scaler.pkl`  
+  - `xgboost_discount_model.pkl`
 
 - `README.md`
 
