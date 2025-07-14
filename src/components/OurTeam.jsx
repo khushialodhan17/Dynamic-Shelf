@@ -10,7 +10,7 @@ const teamMembers = [
     title: 'Frontend Development & Backend Integration',
     image: khushiImg,
     description:
-      'Khushi took charge of creating a responsive and visually appealing frontend. She also worked on backend integration to enable a cohesive user experience across the application.',
+      'Khushi played a key role in designing and developing the frontend of the website. She worked on backend integration as well to enable a smooth data flow and user experience across the website.',
     socials: {
       linkedin: 'https://www.linkedin.com/in/khushi-alodhan-a82906283/',
     },
@@ -24,7 +24,7 @@ const teamMembers = [
     title: 'Frontend & Backend Integration',
     image: ananyaImg,
     description:
-      'Ananya played a key role in designing and developing the frontend of the website. She also worked on integrating the frontend with the backend, ensuring smooth user interaction and data flow.',
+      'Ananya took charge of creating a visually appealing frontend. She was also involved in and was working on integrating the frontend with the backend of the website.',
     socials: {
       linkedin: 'https://www.linkedin.com/in/ananya-goyal-824690288/',
     },
